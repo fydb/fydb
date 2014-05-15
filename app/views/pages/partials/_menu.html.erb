@@ -1,0 +1,15 @@
+<%# cache "default_menu" do %>
+<div class="collapse navbar-collapse">
+  <ul class="nav navbar-nav">
+    <% @pages.each do |page| %>
+      <li class="nav-item">
+        <% if page == @home %>
+          <%= link_to page.name, "/", title: page.name, id: page.name %>
+        <% else %>
+          <%= link_to page.name, "/#{page.permalink}/", title: page.name, id: page.name %>
+        <% end %>
+      <% end %>
+    </li>
+  </ul>
+</div>
+<%# end %>

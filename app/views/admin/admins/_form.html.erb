@@ -1,0 +1,16 @@
+<%= bootstrap_form_for([:admin, @admin], layout: :horizontal) do |f| %>
+  <%= f.alert_message "Please fix the errors below." %>
+
+    <%= f.email_field :email %>
+
+    <% if controller.action_name == "new" %>
+      <%= f.password_field :password %>
+      <%= f.password_field :password_confirmation %>
+  <% else %>
+      <%= f.password_field :password %>
+      <%= f.password_field :password_confirmation %>
+  <% end %>
+  <%= f.form_group do %>
+    <%= f.submit %>
+  <% end %>
+<% end %>
